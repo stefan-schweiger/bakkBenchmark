@@ -1,0 +1,11 @@
+.DS_Store
+.DS_Store?
+*/.vscode/*
+*/.vs/*
+*/obj/*
+*/bin/*
+*/dist/*
+*/bin/*
+*/out/*
+*/packages/*
+*.suo

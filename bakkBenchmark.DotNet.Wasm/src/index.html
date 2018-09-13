@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+  </head>
+  <body>
+	  Console:
+	  <br>
+	  <textarea rows="30" cols="80" id="output" style="font-family: 'Courier New', Courier, monospace"></textarea>
+	  <br>
+		  <button type="button" onclick="App.onClick()" id="button" disabled="true">Run</button>
+	  <br>
+	
+	<script type='text/javascript'>
+		let origLog;
+
+		if (typeof console !== "undefined") {
+			if (typeof console.log !== "undefined") {
+				origLog = console.log;
+			}
+		}
+
+		console.log = (message) => {
+			origLog(message);
+			const out = document.querySelector("#output");
+
+			if (out != null) {
+				out.value += message + "\n";
+			}
+		};
+
+		var App = {
+			onClick: function () {
+				this.output.value = "...";
+				this.main();
+			},
+
+			init: function () {
+				this.main = Module.mono_bind_static_method ("[Benchmark] Program:Main");
+				this.output = document.getElementById("output")
+				this.button = document.getElementById("button");
+				this.button.disabled = false;
+			},
+		};
+      </script>
+      <script type="text/javascript" src="runtime.js"></script>
+      <script async type="text/javascript" src="mono.js"></script>
+  </body>
+  </html>

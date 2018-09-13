@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es2015",
+    "outDir": "./out",
+    "strict": true,
+    "esModuleInterop": true
+  }
+}
