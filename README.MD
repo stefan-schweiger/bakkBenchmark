@@ -26,8 +26,8 @@ The .NET Projects where build with `Release` configuration and the C Projects wi
 
 The following results were recorded on a MacBook Pro (Retina, 15-inch, Late 2013) and where applicable Firefox 62.0 was used as the browser.
 
-| Benchmark |    C   |  C.Wasm  | JavaScript | Dotnet.Console | Dotnet.Wasm | DotNet.Interpreter |
-|-----------|:------:|:--------:|:----------:|:--------------:|:-----------:|:------------------:|
+| Benchmark |      C |   C.Wasm | JavaScript | Dotnet.Console | Dotnet.Wasm | DotNet.Interpreter |
+|-----------|-------:|---------:|-----------:|---------------:|------------:|-------------------:|
 | Generate  | 527.54 |   673.00 |   3,869.00 |       1,227.88 |   29,832.00 |          11,276.61 |
 | Sequence  | 282.58 |   495.00 |   1,484.00 |         361.35 |    8,295.00 |           2,467.20 |
 | Sort      |  83.90 |   167.00 |     878.00 |         163.68 |    5,754.00 |           2,287.95 |
