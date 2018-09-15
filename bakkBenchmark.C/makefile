@@ -6,7 +6,7 @@ OUTFILE=benchmark
 PROJFILES=*.c *.h makefile
 
 CC=clang
-CFLAGS=-std=c99 -pedantic -Wall -Os 
+CFLAGS=-std=c99 -pedantic -Wall -O3
 
 SRC=src/*.c
  

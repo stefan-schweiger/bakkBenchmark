@@ -1,83 +1,70 @@
 /*
- * Iterative Quicksort algorithm adapted from https://www.geeksforgeeks.org/iterative-quick-sort/
+ * MergeSort algorithm adapted from https://www.geeksforgeeks.org/iterative-merge-sort/
  */
 
 #include "sort.h"
 
-static int PartitionIterative(double arr[], int low, int high)
+/* Function to merge the two haves arr[l..m] and arr[m+1..r] of array arr[] */
+void merge(double arr[], int l, int m, int r)
 {
-    double temp;
-    double pivot = arr[high];
-    
-    // index of smaller element
-    int i = (low-1); 
-    for (int j = low; j <= high-1; j++)
+    int i, j, k;
+    int n1 = m - l + 1;
+    int n2 =  r - m;
+ 
+    /* create temp arrays */
+    double L[n1], R[n2];
+ 
+    /* Copy data to temp arrays L[] and R[] */
+    for (i = 0; i < n1; i++)
+        L[i] = arr[l + i];
+    for (j = 0; j < n2; j++)
+        R[j] = arr[m + 1+ j];
+ 
+    /* Merge the temp arrays back into arr[l..r]*/
+    i = 0;
+    j = 0;
+    k = l;
+    while (i < n1 && j < n2)
     {
-        // If current element is smaller
-        // than or equal to pivot
-        if (arr[j] <= pivot)
+        if (L[i] <= R[j])
         {
+            arr[k] = L[i];
             i++;
-
-            // swap arr[i] and arr[j]
-            temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
         }
+        else
+        {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
     }
-
-    // swap arr[i+1] and arr[high] 
-    // (or pivot)
-
-    temp = arr[i+1];
-    arr[i+1] = arr[high];
-    arr[high] = temp;
-
-    return i+1;
+ 
+    /* Copy the remaining elements of L[], if there are any */
+    while (i < n1)
+    {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+ 
+    /* Copy the remaining elements of R[], if there are any */
+    while (j < n2)
+    {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
 }
 
-void QuickSort(double arr[], int low, int high)
+/* l is for left index and r is right index of the sub-array
+  of arr to be sorted */
+void mergeSort(double arr[], int l, int r)
 {
-    // Create an auxiliary stack
-    int stack[high-low+1];
-
-    // initialize top of stack
-    int top = -1;
-
-    // push initial values of low and high to 
-    // stack
-    stack[++top] = low;
-    stack[++top] = high;
-
-    // Keep popping from stack while 
-    // is not empty
-    while (top >= 0)
-    {
-        // Pop high and low
-        high = stack[top--];
-        low = stack[top--];
-
-        // Set pivot element at its 
-        // correct position in 
-        // sorted array
-        int p = PartitionIterative(arr, low, high);
-
-        // If there are elements on 
-        // left side of pivot, then
-        // push left side to stack
-        if (p-1 > low)
-        {
-            stack[++top] = low;
-            stack[++top] = p - 1;
-        }
-
-        // If there are elements on
-        // right side of pivot, then 
-        // push right side to stack
-        if (p+1 < high)
-        {
-            stack[++top] = p + 1;
-            stack[++top] = high;
-        }
-    }
+   if (l < r)
+   {
+      int m = l+(r-l)/2; //Same as (l+r)/2 but avoids overflow for large l & h
+      mergeSort(arr, l, m);
+      mergeSort(arr, m+1, r);
+      merge(arr, l, m, r);
+   }
 }

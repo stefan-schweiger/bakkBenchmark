@@ -4,10 +4,10 @@
 
 The Benchmark currently performs the following four tasks:
 
-* Generate 100,000 random gene sequences with a length of 1000 letters
-* Transcribes the DNA to the resulting proteins and calculates the ratio of leucine to serine
-* Sort the resulting list of ratios by their values
-* Calculates Q1, Median, Q3 and calculate average and standard deviation
+* Generate 500,000 random gene sequences with a length of 100 letters
+* Transcribes the DNA to the resulting proteins and calculates the ratio of polar to nonpolar and basic to acidic proteins
+* Separately sort the two resulting list of ratios by their values
+* Calculates Q1, Median, Q3 and calculate average and standard deviation for those lists
 
 ## Platform Information
 
@@ -20,18 +20,18 @@ The Benchmark was implemented in the following languages/platforms:
 * **DotNet.Interpreter** → Mono 5.14.0
 * **DotNet.Wasm** → mono-wasm commit 55360b5 ($WASM_SDK variable needs to be set)
 
-The .NET Projects where build with `Release` configuration and the C Projects with `-Os` optimizations.
+The .NET Projects where build with `Release` configuration and the C Projects with `-O3` optimizations.
 
 ## Results
 
 The following results were recorded on a MacBook Pro (Retina, 15-inch, Late 2013) and where applicable Firefox 62.0 was used as the browser.
 
-| Benchmark |        C |   C.Wasm | JavaScript | Dotnet.Console | Dotnet.Wasm | DotNet.Interpreter |
-|-----------|---------:|---------:|-----------:|---------------:|------------:|-------------------:|
-| Generate  | 1,012.05 | 1,089.20 |   7,485.90 |       2,351.48 |   53,166.40 |          20,005.41 |
-| Sequence  |   327.49 |   410.00 |   2,158.70 |         368.03 |    6,875.00 |           2,235.60 |
-| Sort      |    29.54 |    45.40 |      65.60 |          43.44 |    4,136.80 |           1,709.73 |
-| Calculate |     0.01 |     1.00 |       2.00 |           1.11 |       17.40 |               6.12 |
-|           | 1,369.09 | 1,545.60 |   9,712.20 |       2,764.06 |   64,195.60 |          23,956.86 |
+| Benchmark |    C   |  C.Wasm  | JavaScript | Dotnet.Console | Dotnet.Wasm | DotNet.Interpreter |
+|-----------|:------:|:--------:|:----------:|:--------------:|:-----------:|:------------------:|
+| Generate  | 527.54 |   673.00 |   3,869.00 |       1,227.88 |   29,832.00 |          11,276.61 |
+| Sequence  | 282.58 |   495.00 |   1,484.00 |         361.35 |    8,295.00 |           2,467.20 |
+| Sort      |  83.90 |   167.00 |     878.00 |         163.68 |    5,754.00 |           2,287.95 |
+| Calculate |   3.80 |     8.00 |      20.00 |           5.93 |      394.00 |             141.59 |
+|           | 897.82 | 1,343.00 |   6,251.00 |       1,758.84 |   44,275.00 |          16,173.35 |
 
-![Benchmark Chart - Firefox](images/benchmark-20180913-Firefox.png)
+![Benchmark Chart - Firefox](images/benchmark-20180915-Firefox.png)

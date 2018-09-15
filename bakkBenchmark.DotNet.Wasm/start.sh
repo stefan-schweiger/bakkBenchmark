@@ -1,3 +1,4 @@
+export WASM_SDK=./WASM_SDK
 rm -rf out
 mkdir -p out
 csc -target:library -optimize \

@@ -6,7 +6,7 @@ OUTFILE=out/index.html
 PROJFILES=*.c *.h makefile
 
 CC=emcc
-CFLAGS=-s WASM=1 -s ALLOW_MEMORY_GROWTH=1 -Os
+CFLAGS=-s WASM=1 -s ALLOW_MEMORY_GROWTH=1 -O3 -pedantic -Wall
 
 SRC=../bakkBenchmark.C/src/*.c
  
