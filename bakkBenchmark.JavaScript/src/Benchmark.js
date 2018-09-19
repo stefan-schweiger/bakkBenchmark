@@ -17,7 +17,8 @@ function benchmark() {
         sequence: 0,
         sort: 0,
         calculate: 0,
-        calcResult: null
+        resPolar: null,
+        resAcid: null
     };
 
     debugger;
@@ -44,7 +45,7 @@ function benchmark() {
 
     sw.start();
     const resPolar = Calc.calculate(listPolar);
-    const resAcid = Calc.calculate(listPolar);
+    const resAcid = Calc.calculate(listAcid);
     sw.stop();
 
     res.calculate = sw.elapsed;

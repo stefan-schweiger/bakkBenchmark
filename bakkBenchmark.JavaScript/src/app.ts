@@ -1,7 +1,7 @@
 
 function run() {
-    const printCSV = false;
-    const worker = new Worker('./Program.js');
+    const printCSV = true;
+    const worker = new Worker('./Benchmark.js');
 
     console.log("Running...");
     worker.postMessage("start");
@@ -17,7 +17,7 @@ function run() {
         } else {
             console.log(`${data.generate.toFixed(2)},${data.sequence.toFixed(2)},${data.sort.toFixed(2)},${data.calculate.toFixed(2)}`);
         }
-        
+
         console.log("----------------------------------------------");
         printRes(data.resPolar);
 
@@ -27,12 +27,12 @@ function run() {
 }
 
 function printRes(res: any) {
-    console.log(`Q1      ${res.q1.toFixed(5)}`);
-    console.log(`Median  ${res.median.toFixed(5)}`);
-    console.log(`Q3      ${res.q3.toFixed(5)}`);
-    console.log(`Mode    ${res.mode.toFixed(5)}`);
-    console.log(`L. Out. ${res.lowerOutliers.toFixed(5)}`);
-    console.log(`U. Out. ${res.upperOutliers.toFixed(5)}`);
-    console.log(`Avg.    ${res.avg.toFixed(5)}`);
-    console.log(`StDev.  ${res.stDev.toFixed(5)}`);
+    console.log(`Q1      ${res.q1.toFixed(3)}`);
+    console.log(`Median  ${res.median.toFixed(3)}`);
+    console.log(`Q3      ${res.q3.toFixed(3)}`);
+    console.log(`Mode    ${res.mode.toFixed(3)}`);
+    console.log(`L. Out. ${res.lowerOutliers.toFixed(0)}`);
+    console.log(`U. Out. ${res.upperOutliers.toFixed(0)}`);
+    console.log(`Avg.    ${res.avg.toFixed(3)}`);
+    console.log(`StDev.  ${res.stDev.toFixed(3)}`);
 }
