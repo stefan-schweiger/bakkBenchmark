@@ -26,12 +26,16 @@ The .NET Projects where build with `Release` configuration and the C Projects wi
 
 The following results were recorded on a MacBook Pro (Retina, 15-inch, Late 2013) and where applicable Firefox 62.0 was used as the browser.
 
-| Benchmark |      C |   C.Wasm | JavaScript | Dotnet.Console | Dotnet.Wasm | DotNet.Interpreter |
-|-----------|-------:|---------:|-----------:|---------------:|------------:|-------------------:|
-| Generate  | 527.54 |   673.00 |   3,869.00 |       1,227.88 |   29,832.00 |          11,276.61 |
-| Sequence  | 282.58 |   495.00 |   1,484.00 |         361.35 |    8,295.00 |           2,467.20 |
-| Sort      |  83.90 |   167.00 |     878.00 |         163.68 |    5,754.00 |           2,287.95 |
-| Calculate |   3.80 |     8.00 |      20.00 |           5.93 |      394.00 |             141.59 |
-|           | 897.82 | 1,343.00 |   6,251.00 |       1,758.84 |   44,275.00 |          16,173.35 |
 
-![Benchmark Chart - Firefox](images/benchmark-20180915-Firefox.png)
+| Benchmark |          C |       C.Wasm |   JavaScript | Dotnet.Console |   Dotnet.Wasm | DotNet.Interp |
+|-----------|-----------:|-------------:|-------------:|---------------:|--------------:|--------------:|
+| Generate  |     529.92 |       675.90 |     3,022.00 |       1,255.31 |     27,612.40 |     10,866.80 |
+| Sequence  |     284.10 |       491.20 |       579.10 |         364.82 |      8,310.80 |      2,503.20 |
+| Sort      |      83.89 |       164.30 |       330.80 |         172.32 |      5,649.30 |      2,065.82 |
+| Calculate |       3.58 |         5.50 |        11.40 |           6.62 |        395.00 |        130.21 |
+|           | **901.49** | **1,336.90** | **3,943.30** |   **1,799.06** | **41,967.50** | **15,566.04** |
+
+![Benchmark Chart - Firefox](images/benchmark-overall-ff.png)
+
+![Benchmark Chart - Generate - Firefox](images/benchmark-generate-ff.png) ![Benchmark Chart - Sequence - Firefox](images/benchmark-sequence-ff.png)
+![Benchmark Chart - Generate - Firefox](images/benchmark-sort-ff.png) ![Benchmark Chart - Sequence - Firefox](images/benchmark-calculate-ff.png)

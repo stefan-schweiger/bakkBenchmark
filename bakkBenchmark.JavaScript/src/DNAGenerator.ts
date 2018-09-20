@@ -11,14 +11,14 @@ class DNAGenerator
 
         for (let i = 0; i < n; i++)
         {
-            var str = "";
+            var arr = new Array<string>(length);
 
             for (let j = 0; j < length; j++)
             {
-                str += DNAGenerator.getRandomCode();
+                arr.push(DNAGenerator.getRandomCode());
             }
 
-            res[i] = str;
+            res[i] = arr.join('');
         }
 
         return res;
