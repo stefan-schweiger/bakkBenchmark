@@ -35,13 +35,13 @@ The following results were recorded on a MacBook Pro (Retina, 15-inch, Late 2013
 | Calculate |       3.58 |         5.50 |        11.40 |           6.62 |        395.00 |        130.21 |
 |           | **901.49** | **1,336.90** | **3,943.30** |   **1,799.06** | **41,967.50** | **15,566.04** |
 
-![Benchmark Chart - Firefox](images/benchmark-overall-ff.png)
+<img alt="Benchmark Chart - Firefox" src="images/benchmark-overall-ff.png" width="860" />
 
 ### Detail Results
 
-![Benchmark Chart - Generate - Firefox](images/benchmark-generate-ff.png) ![Benchmark Chart - Sequence - Firefox](images/benchmark-sequence-ff.png)
-![Benchmark Chart - Sort - Firefox](images/benchmark-sort-ff.png) ![Benchmark Chart - Calculate - Firefox](images/benchmark-calculate-ff.png)
+<img alt="Benchmark Chart - Generate - Firefox" src="images/benchmark-generate-ff.png" width="430" /> <img alt="Benchmark Chart - Sequence - Firefox" src="images/benchmark-sequence-ff.png" width="430" />
+<img alt="Benchmark Chart - Sort - Firefox" src="images/benchmark-sort-ff.png" width="430" /> <img alt="Benchmark Chart - Calculate - Firefox" src="images/benchmark-calculate-ff.png" width="430" />
 
 ### Browser Results
 
-![Benchmark Chart - Browser - Total](images/benchmark-browser-total.png) ![Benchmark Chart - Browser - Relative](images/benchmark-browser-relative.png)
+<img alt="Benchmark Chart - Browser - Total" src="images/benchmark-browser-total.png" width="430" /> <img alt="Benchmark Chart - Browser - Relative" src="images/benchmark-browser-relative.png" width="430" />
