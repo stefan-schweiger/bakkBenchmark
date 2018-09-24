@@ -18,7 +18,7 @@ The Benchmark was implemented in the following languages/platforms:
 * **JavaScript** → TypeScript 2.8.1 (tsc needs to be in PATH variable)
 * **DotNet.Console** → .NET Core 2.1.300
 * **DotNet.Interpreter** → Mono 5.14.0
-* **DotNet.Wasm** → mono-wasm commit 55360b5 ($WASM_SDK variable needs to be set)
+* **DotNet.Wasm** → mono-wasm commit c211324 ($WASM_SDK variable needs to be set)
 
 The .NET Projects where build with `Release` configuration and the C Projects with `-O3` optimizations.
 
@@ -37,5 +37,11 @@ The following results were recorded on a MacBook Pro (Retina, 15-inch, Late 2013
 
 ![Benchmark Chart - Firefox](images/benchmark-overall-ff.png)
 
+### Detail Results
+
 ![Benchmark Chart - Generate - Firefox](images/benchmark-generate-ff.png) ![Benchmark Chart - Sequence - Firefox](images/benchmark-sequence-ff.png)
-![Benchmark Chart - Generate - Firefox](images/benchmark-sort-ff.png) ![Benchmark Chart - Sequence - Firefox](images/benchmark-calculate-ff.png)
+![Benchmark Chart - Sort - Firefox](images/benchmark-sort-ff.png) ![Benchmark Chart - Calculate - Firefox](images/benchmark-calculate-ff.png)
+
+### Browser Results
+
+![Benchmark Chart - Browser - Total](images/benchmark-browser-total.png) ![Benchmark Chart - Browser - Relative](images/benchmark-browser-relative.png)
