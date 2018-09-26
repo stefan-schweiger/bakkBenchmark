@@ -7,7 +7,7 @@ class DNAGenerator
 
     public static generate(n: number, length: number): string[]
     {
-        var res = new Array<string>();
+        var res = new Array<string>(n);
 
         for (let i = 0; i < n; i++)
         {
@@ -15,7 +15,7 @@ class DNAGenerator
 
             for (let j = 0; j < length; j++)
             {
-                arr.push(DNAGenerator.getRandomCode());
+                arr[j] = DNAGenerator.getRandomCode();
             }
 
             res[i] = arr.join('');

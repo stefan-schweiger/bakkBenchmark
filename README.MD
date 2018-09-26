@@ -14,8 +14,8 @@ The Benchmark currently performs the following four tasks:
 The Benchmark was implemented in the following languages/platforms:
 
 * **C** → clang 6.0.1
-* **C.Wasm** → emcc 1.38.6 (emcc needs to be in PATH variable)
-* **JavaScript** → TypeScript 2.8.1 (tsc needs to be in PATH variable)
+* **C.Wasm** → emcc 1.38.6
+* **JavaScript** → TypeScript 3.0.3
 * **DotNet.Console** → .NET Core 2.1.300
 * **DotNet.Interpreter** → Mono 5.14.0
 * **DotNet.Wasm** → mono-wasm commit c211324 ($WASM_SDK variable needs to be set)
@@ -26,14 +26,13 @@ The .NET Projects where build with `Release` configuration and the C Projects wi
 
 The following results were recorded on a MacBook Pro (Retina, 15-inch, Late 2013) and where applicable Firefox 62.0 was used as the browser.
 
-
-| Benchmark |          C |       C.Wasm |   JavaScript | Dotnet.Console |   Dotnet.Wasm | DotNet.Interp |
-|-----------|-----------:|-------------:|-------------:|---------------:|--------------:|--------------:|
-| Generate  |     529.92 |       675.90 |     3,022.00 |       1,255.31 |     27,612.40 |     10,866.80 |
-| Sequence  |     284.10 |       491.20 |       579.10 |         364.82 |      8,310.80 |      2,503.20 |
-| Sort      |      83.89 |       164.30 |       330.80 |         172.32 |      5,649.30 |      2,065.82 |
-| Calculate |       3.58 |         5.50 |        11.40 |           6.62 |        395.00 |        130.21 |
-|           | **901.49** | **1,336.90** | **3,943.30** |   **1,799.06** | **41,967.50** | **15,566.04** |
+| Benchmark |      C |   C.Wasm | JavaScript | Dotnet.Console | Dotnet.Wasm | Dotnet.Interp |
+|-----------|-------:|---------:|-----------:|---------------:|------------:|--------------:|
+| Generate  | 529.92 |   675.90 |   2,577.89 |       1,255.31 |   27,612.40 |     10,866.80 |
+| Sequence  | 284.10 |   491.20 |     581.21 |         364.82 |    8,310.80 |      2,503.20 |
+| Sort      |  83.89 |   164.30 |     325.88 |         172.32 |    5,649.30 |      2,065.82 |
+| Calculate |   3.58 |     5.50 |      11.68 |           6.62 |      395.00 |        130.21 |
+|           | **901.49** | **1,336.90** | **3,496.67** | **1,799.06** | **41,967.50** | **15,566.04** |
 
 <img alt="Benchmark Chart - Firefox" src="images/benchmark-overall-ff.png" width="860" />
 
