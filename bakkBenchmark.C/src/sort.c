@@ -9,10 +9,11 @@ void merge(double arr[], int l, int m, int r)
 {
     int i, j, k;
     int n1 = m - l + 1;
-    int n2 =  r - m;
+    int n2 = r - m;
  
     /* create temp arrays */
-    double L[n1], R[n2];
+    double L[n1];
+    double R[n2];
  
     /* Copy data to temp arrays L[] and R[] */
     for (i = 0; i < n1; i++)

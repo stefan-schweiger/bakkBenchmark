@@ -12,7 +12,7 @@ namespace BakkBenchmark.DotNet
         {
             int i, j, k;
             int n1 = m - l + 1;
-            int n2 =  r - m;
+            int n2 = r - m;
         
             /* create temp arrays */
             var L = new double[n1];

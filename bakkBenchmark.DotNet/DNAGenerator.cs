@@ -34,15 +34,14 @@ namespace BakkBenchmark.DotNet
         {
             var r = Random();
 
-            if (r < 0.3 * IM) {
+            if (r < 0.25 * IM)
                 return 'A';
-            } else if (r < 0.5 * IM) {
+            else if (r < 0.5 * IM)
                 return 'C';
-            } else if (r < 0.7 * IM) {
+            else if (r < 0.75 * IM)
                 return 'G';
-            } else {
+            else
                 return 'T';
-            }
         }
 
         private static int Random()

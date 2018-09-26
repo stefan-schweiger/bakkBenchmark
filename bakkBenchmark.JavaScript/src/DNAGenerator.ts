@@ -28,15 +28,14 @@ class DNAGenerator
     {
         var r = DNAGenerator.random();
 
-        if (r < 0.3 * DNAGenerator.IM) {
+        if (r < 0.25 * DNAGenerator.IM)
             return 'A';
-        } else if (r < 0.5 * DNAGenerator.IM) {
+        else if (r < 0.5 * DNAGenerator.IM)
             return 'C';
-        } else if (r < 0.7 * DNAGenerator.IM) {
+        else if (r < 0.75 * DNAGenerator.IM)
             return 'G';
-        } else {
+        else
             return 'T';
-        }
     }
 
     private static random(): number

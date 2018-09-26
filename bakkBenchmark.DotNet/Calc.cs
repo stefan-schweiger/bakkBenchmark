@@ -58,16 +58,16 @@ namespace BakkBenchmark.DotNet
             };
         }
 
-        private static double CalcMode(double[] a)
+        private static double CalcMode(double[] list)
         {
-            double number = a[0];
+            double number = list[0];
             double mode = number;
             int count = 1;
             int countMode = 1;
 
-            for (int i = 1; i < a.Length; i++)
+            for (int i = 1; i < list.Length; i++)
             {
-                if (a[i] == number)
+                if (list[i] == number)
                 {
                     count++;
                 }
@@ -79,7 +79,7 @@ namespace BakkBenchmark.DotNet
                         mode = number;
                     }
                     count = 1;
-                    number = a[i];
+                    number = list[i];
                 }
             }
 

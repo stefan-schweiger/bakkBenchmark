@@ -2,67 +2,82 @@
 
 #include <math.h>
 
-double calcMode(double a[], int n) {
-    double number = a[0];
+double calcMode(double *list, int n)
+{
+    double number = list[0];
     double mode = number;
     int count = 1;
     int countMode = 1;
 
     for (int i = 1; i < n; i++)
     {
-        if (a[i] == number) 
+        if (list[i] == number)
         {
             count++;
         }
         else
         {
-            if (count > countMode) 
+            if (count > countMode)
             {
                 countMode = count;
                 mode = number;
             }
             count = 1;
-            number = a[i];
+            number = list[i];
         }
     }
 
     return mode;
 }
 
-struct StatisticResult calculate(double *list, int n) {
-    struct StatisticResult res;
-    res.lowerOutliers = 0;
-    res.upperOutliers = 0;
+struct StatisticResult calculate(double *list, int n)
+{
+    double q1 = list[n / 4];
+    double median = list[n / 2];
+    double q3 = list[(n / 4) * 3];
 
     double sum = 0.0;
-
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         sum += list[i];
     }
 
-    res.avg = sum / n;
+    double avg = sum / n;
 
     double stDevSum = 0.0;
-
-    for (int i = 0; i < n; i++) {
-        stDevSum += (list[i] - res.avg) * (list[i] - res.avg);
+    for (int i = 0; i < n; i++)
+    {
+        stDevSum += (list[i] - avg) * (list[i] - avg);
     }
 
-    res.stDev = sqrt(stDevSum / n);
+    double stDev = sqrt(stDevSum / n);
 
-    res.q1 = list[n/4];
-    res.median = list[n/2];
-    res.q3 = list[(n/4)*3];
+    double upperOutliers = 0;
+    double lowerOutliers = 0;
 
-    for (int i = 0; i < n; i++) {
-        if (list[i] > res.median + res.stDev * 2) {
-            res.upperOutliers++;
-        } else if (list[i] < res.median - res.stDev * 2) {
-            res.lowerOutliers++;
+    for (int i = 0; i < n; i++)
+    {
+        if (list[i] > median + stDev * 2)
+        {
+            upperOutliers++;
+        }
+        else if (list[i] < median - stDev * 2)
+        {
+            lowerOutliers++;
         }
     }
 
-    res.mode = calcMode(list, n);
+    double mode = calcMode(list, n);
+
+    struct StatisticResult res;
+    res.q1 = q1;
+    res.median = median;
+    res.q3 = q3;
+    res.upperOutliers = upperOutliers;
+    res.lowerOutliers = lowerOutliers;
+    res.avg = avg;
+    res.stDev = stDev;
+    res.mode = mode;
 
     return res;
 }

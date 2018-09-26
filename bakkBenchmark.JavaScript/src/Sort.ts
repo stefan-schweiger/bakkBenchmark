@@ -3,7 +3,8 @@
  */
 
 class Sort {
-    static merge(arr: number[], l: number, m: number, r: number) {
+    static merge(arr: number[], l: number, m: number, r: number)
+    {
         let i = 0;
         let j = 0;
         let k = 0;
@@ -24,12 +25,15 @@ class Sort {
         i = 0;
         j = 0;
         k = l;
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
+        while (i < n1 && j < n2)
+        {
+            if (L[i] <= R[j])
+            {
                 arr[k] = L[i];
                 i++;
             }
-            else {
+            else
+            {
                 arr[k] = R[j];
                 j++;
             }
@@ -53,8 +57,10 @@ class Sort {
 
     /* l is for left index and r is right index of the sub-array
     of arr to be sorted */
-    private static mergeSortInternal(arr: number[], l: number, r: number) {
-        if (l < r) {
+    private static mergeSortInternal(arr: number[], l: number, r: number)
+    {
+        if (l < r)
+        {
             let m = Math.floor(l + (r - l) / 2); //Same as (l+r)/2 but avoids overflow for large l & h
             Sort.mergeSortInternal(arr, l, m);
             Sort.mergeSortInternal(arr, m + 1, r);
@@ -62,7 +68,8 @@ class Sort {
         }
     }
 
-    private static mergeSort(arr: number[]) {
+    private static mergeSort(arr: number[])
+    {
         Sort.mergeSortInternal(arr, 0, arr.length - 1);
     }
 }

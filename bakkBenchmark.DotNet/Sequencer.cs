@@ -24,28 +24,35 @@ namespace BakkBenchmark.DotNet
                     char c2 = gen[j + 1];
                     char c3 = gen[j + 2];
 
+                    // NOTE: Transcription is hardcoded in the following if-statements
+                    // A -> U, C -> G, G -> C, T -> A
                     // Stop codon
-                    if ((c1 == 'U' && c2 == 'A' && c3 == 'A') ||
-                        (c1 == 'U' && c2 == 'A' && c3 == 'G') ||
-                        (c1 == 'U' && c2 == 'G' && c3 == 'A')
-                    ) {
+                    /*
+                    if ((c1 == 'A' && c2 == 'T' && c3 == 'T') ||
+                        (c1 == 'A' && c2 == 'T' && c3 == 'C') ||
+                        (c1 == 'A' && c2 == 'C' && c3 == 'T'))
+                    {
                         break;
                     }
+                    */
 
-                    if (c2 == 'U') {
+                    if (c2 == 'A')
+                    {
                         nonpolar++;
-                    } else if (c2 == 'C') {
-                        if (c1 == 'C' || c1 == 'G') {
+                    }
+                    else if (c2 == 'G')
+                    {
+                        if (c1 == 'G' || c1 == 'C')
                             nonpolar++;
-                        } else {
+                        else
                             polar++;
-                        }
-                    } else if (c2 == 'G') {
-                        if (c1 == 'G') {
+                    }
+                    else if (c2 == 'C')
+                    {
+                        if (c1 == 'C')
                             polar++;
-                        } else if (c1 == 'U' && c3 == 'G') {
+                        else if (c1 == 'A' && c3 == 'C')
                             nonpolar++;
-                        }
                     }
                 }
 
@@ -73,28 +80,34 @@ namespace BakkBenchmark.DotNet
                     char c2 = gen[j + 1];
                     char c3 = gen[j + 2];
 
+                    // NOTE: Transcription is hardcoded in the following if-statements
+                    // A -> U, C -> G, G -> C, T -> A
                     // Stop codon
-                    if ((c1 == 'U' && c2 == 'A' && c3 == 'A') ||
-                        (c1 == 'U' && c2 == 'A' && c3 == 'G') ||
-                        (c1 == 'U' && c2 == 'G' && c3 == 'A')
-                    ) {
+                    /*
+                    if ((c1 == 'A' && c2 == 'T' && c3 == 'T') ||
+                        (c1 == 'A' && c2 == 'T' && c3 == 'C') ||
+                        (c1 == 'A' && c2 == 'C' && c3 == 'T'))
+                    {
                         break;
                     }
+                    */
 
-                    if (c1 == 'G' && c2 == 'A') {
+                    if (c1 == 'C' && c2 == 'T')
+                    {
                         basic++;
-                    } else if (c2 == 'G') {
-                        if (c1 == 'C') {
+                    }
+                    else if (c2 == 'C') {
+                        if (c1 == 'G')
                             acid++;
-                        } else if (c1 == 'A' && (c3 == 'A' || c3 == 'G')) {
+                        else if (c1 == 'T' && (c3 == 'T' || c3 == 'C'))
                             acid++;
-                        }
-                    } else if (c2 == 'A') {
-                        if (c1 == 'C' && (c3 == 'U' || c3 == 'C')) {
+                    }
+                    else if (c2 == 'T')
+                    {
+                        if (c1 == 'G' && (c3 == 'A' || c3 == 'G'))
                             acid++;
-                        } else if (c1 == 'A' && (c3 == 'A' || c3 == 'G')) {
+                        else if (c1 == 'T' && (c3 == 'T' || c3 == 'C'))
                             acid++;
-                        }
                     }
                 }
 
